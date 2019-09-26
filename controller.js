@@ -18,7 +18,7 @@ function completedTaskCount()
   var completed = document.querySelectorAll('input[type="checkbox" ]:checked')
   console.log(Object.values(completed));
   //console.log(Object.entries(completed));
-  if (completed.length != 0) 
+  if (completed.length != 0)
   {
     alert(alertMessage.completed + ' ' + completed.length);
   }
