@@ -1,3 +1,7 @@
+var imported = document.createElement('script');
+imported.src = './view.js';
+document.head.appendChild(imported);
+
 //clearing the text field
 function clearField() 
 {
@@ -21,3 +25,12 @@ function eventToRemoveTask()
     buttons[i].addEventListener('click', removeTask);
   };
 }
+
+function addElement(i,taskName){
+  var html = '<li>';
+  for(var i=0; i<todos.length;i++){
+    showTask(i,taskName);
+  }
+ html += '</li>'
+}
+
