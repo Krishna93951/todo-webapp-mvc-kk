@@ -1,6 +1,3 @@
-var imported = document.createElement('script');
-imported.src = './view.js';
-document.head.appendChild(imported);
 
 //clearing the text field
 function clearField() 
@@ -34,3 +31,10 @@ function addElement(i,taskName){
  html += '</li>'
 }
 
+function init()
+{
+  showTask();
+  eventsHandler();
+  totalMsg();
+}
+init();
