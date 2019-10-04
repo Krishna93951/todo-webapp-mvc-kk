@@ -1,22 +1,45 @@
+var todoList=document.getElementById('todoList');
+var countMessage = {
+  all: "All Tasks:",
+  completed: "/Number of Completed Tasks:",
+  pending: "/Number of Pending Tasks: ",
+  empty:"No Tasks Available",
+  noneCompleted:"None of the Tasks are Completed",
+  nonePending:"None of the Tasks are Pending",
+};
+var taskList = document.getElementById("todoList");
 
-function showTask(i,taskName) 
-{ 
-  var html;
-  return html += '<input type="checkbox" id="'+ i +'" name="check">'+' '+taskName +'  '+'<button class="remove" id="' + i + '">Del</button>';
-  document.getElementById('todoList').innerHTML = html;
-  eventToRemoveTask();
-  totalMsg();
+function totalMsgL(checkedboxs,pending){
+    return totalTodos.innerHTML =   countMessage.all +todos.length +" "+countMessage.completed+checkedboxs.length+" "+  countMessage.pending+pending ; 
 }
 
-// function totalMsg(){
-//   getTodo();
-//   var completed = document.querySelectorAll('input[type="checkbox" ]:checked')
-//   console.log(Object.values(completed))
-//   var pending = todos.length-completed.length;
-//   if(todos.length === 1){
-//     return totalTodos.innerHTML =   countMessage.all +todos.length +" "+countMessage.completed+completed.length+" "+  countMessage.pending+pending ; 
-//   }
-//   else{
-//     return totalTodos.innerHTML = countMessage.all +todos.length +" "+countMessage.completed+completed.length+" "+  countMessage.pending+pending ;
-//     }
-// }
+function showTaskOfLocal(i) 
+{
+  var html = document.createElement('LI');
+  var task = document.createTextNode(i);
+  var x = html.appendChild(task);
+  eventsOfLocalStorage();
+  append(html);
+}
+
+function append(x)
+{
+  todoList.appendChild(x);
+}
+
+function showTaskOfSession() 
+{ 
+  getTodoFromSession();
+  var html = '<ul id="ul">';
+    for (var i = 0; i < todoSession.length; i++)
+    { 
+      html += '<li id="LI">'+'<input type=checkbox value="1" id ="'+ i +'" class="checkbox">'+'  '+'<lable class="strikeThis">'+todoSession[i] +'</label>'+'  '+'<button class="remove" id="' + i + '">Del</button></li>';
+    };
+    html += '</ul>';
+    taskList.innerHTML = html;
+    eventsOfSessionStorage(); 
+}
+
+function totalMsgS(checkedboxs,pending){
+  return totalTodos.innerHTML =   countMessage.all +todoSession.length +" "+countMessage.completed+checkedboxs.length+" "+  countMessage.pending+pending ; 
+}

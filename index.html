@@ -1,12 +1,22 @@
 <html>
   <head>
-    <link rel="style-sheet" href="style.css">
-  <body id="body">
-    <div id="input">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div id="actions">
+      <h1> My Todo List </h1>
+      <select name="storage" id="store">
+        <option>Select the Storage type</option>
+        <option>LOCAL</option>
+        <option>SESSION</option>
+      </select>
+      <input id="todoTask" maxlength="20" placeholder="Enter your To-do" >
+      <input type="button" id="addBtn" value="Add" >
     </div>
-    <div id="main">
-      <ul id="ul"> </ul>
+    <div >
+      <ul id="todoList"></ul>
     </div>
+    <p id="allTask"></p>
     <script src="model.js"></script>
     <script src="view.js"></script>
     <script src="controller.js"></script>

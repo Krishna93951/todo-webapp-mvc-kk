@@ -1,11 +1,35 @@
 h1{
-  font-family: 'Times New Roman', Times, serif;
   text-align: center;
   background-color: lightcoral;
-  padding: 20px;
-}
-#ul{
-  background-color: lightgreen;
-  padding: 20px;
+  height: 60px;
+  margin-top: 20px;
 }
 
+#actions{
+  text-align: center;
+  background-color: lightcoral;
+  padding: 30px;
+}
+
+#todoTask{
+  width: 400px;
+  height: 20px;
+}
+
+#ul{
+  list-style-type:none;
+}
+
+#todoList{
+  text-align: center;
+  padding: 30px;
+  background-color: lightgreen;
+  overflow-y: scroll;
+  height: 150px;
+  
+}
+
+
+.checkbox:checked + .strikeThis {
+  text-decoration: line-through
+}
