@@ -1,12 +1,10 @@
-var todos = [];
-var todoSession = [];
-var todos_str,todos_strSession;
+var todos = getTodoFromLocal();
+var todoSession = getTodoFromSession();
 
 //Local Storage
 function getTodoFromLocal() 
 {
-  todos = JSON.parse(localStorage.getItem('todo')) || [];
-  return todos;
+  return JSON.parse(localStorage.getItem('todo')) || [];
 }
 
 function setTodoToLocal(){
@@ -16,8 +14,7 @@ function setTodoToLocal(){
 //Seesion Storage
 function getTodoFromSession() 
 {
-  todoSession = JSON.parse(sessionStorage.getItem('todosession')) || [];
-  return todoSession ;
+  return JSON.parse(sessionStorage.getItem('todosession')) || [];
 }
 
 function setTodoToSession(){

@@ -33,3 +33,7 @@ h1{
 .checkbox:checked + .strikeThis {
   text-decoration: line-through
 }
+
+todoList , li {
+  list-style-type:none;
+}
